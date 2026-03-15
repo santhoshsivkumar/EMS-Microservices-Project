@@ -1,0 +1,79 @@
+<div class="container">
+
+    <div class="card">
+
+        <h2>Employees</h2>
+
+        <input placeholder="Search employee..." [(ngModel)]="search" (keyup)="loadEmployees()" />
+
+        <h3 style="margin-top:30px">Add Employee</h3>
+
+        <div class="form-grid">
+
+            <input placeholder="First Name" [(ngModel)]="newEmployee.firstName">
+
+            <input placeholder="Last Name" [(ngModel)]="newEmployee.lastName">
+
+            <input placeholder="Email" [(ngModel)]="newEmployee.email">
+
+            <input type="number" placeholder="Salary" [(ngModel)]="newEmployee.salary">
+
+            <select [(ngModel)]="newEmployee.departmentId">
+
+                <option value="">Select Department</option>
+
+                <option *ngFor="let d of departments" [value]="d.id">
+                    {{ d.name }}
+                </option>
+
+            </select>
+
+            <input type="date" [(ngModel)]="newEmployee.dateOfBirth">
+            <input type="date" [(ngModel)]="newEmployee.joiningDate">
+
+            <select [(ngModel)]="newEmployee.roleId">
+                <option value="">Select Role</option>
+                <option *ngFor="let r of roles" [value]="r.id">
+                    {{ r.name }}
+                </option>
+            </select>
+
+            <label>
+                <input type="checkbox" [(ngModel)]="newEmployee.isActive">
+                Active
+            </label>
+
+            <button class="primary" (click)="createEmployee()">Add Employee</button>
+
+        </div>
+
+        <table>
+
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Department</th>
+                <th>Salary</th>
+                <th>Action</th>
+            </tr>
+
+            <tr *ngFor="let emp of employees">
+
+                <td>{{emp.firstName}} {{emp.lastName}}</td>
+                <td>{{emp.email}}</td>
+                <td>{{emp.departmentName}}</td>
+                <td>{{emp.salary}}</td>
+
+                <td>
+                    <button class="danger" (click)="deleteEmployee(emp.id)">
+                        Delete
+                    </button>
+                </td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+</div>

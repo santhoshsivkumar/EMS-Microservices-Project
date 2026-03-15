@@ -1,0 +1,27 @@
+<div class="container">
+
+    <div class="card">
+
+        <h2>EMS Login</h2>
+
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+            <label>Username</label>
+            <input type="text" formControlName="username">
+
+            <label style="margin-top:10px">Password</label>
+            <input type="password" formControlName="password">
+
+            <div *ngIf="errorMessage" style="color:red;margin-top:10px">
+                {{errorMessage}}
+            </div>
+
+            <button class="primary" type="submit" style="margin-top:15px">
+                Login
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
