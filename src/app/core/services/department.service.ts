@@ -7,7 +7,7 @@ import { map } from 'rxjs';
   providedIn: 'root',
 })
 export class DepartmentService {
-  private apiUrl = 'https://localhost:44311/api/departments';
+  private apiUrl = 'http://localhost:5000/api/departments';
 
   constructor(private http: HttpClient) {}
 

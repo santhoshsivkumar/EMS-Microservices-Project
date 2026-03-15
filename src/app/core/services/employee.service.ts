@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class EmployeeService {
-  private api = 'https://localhost:44311/api/employees';
+  private api = 'http://localhost:5000/api/employees';
 
   constructor(private http: HttpClient) {}
 

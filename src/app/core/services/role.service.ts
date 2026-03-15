@@ -7,7 +7,7 @@ import { map } from 'rxjs';
   providedIn: 'root',
 })
 export class RoleService {
-  private api = 'https://localhost:44311/api/roles';
+  private api = 'http://localhost:5000/api/roles';
 
   constructor(private http: HttpClient) {}
 
