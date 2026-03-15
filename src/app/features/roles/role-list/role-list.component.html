@@ -1,0 +1,32 @@
+<div class="container">
+
+    <div class="card">
+
+        <h2>Roles</h2>
+
+        <div class="form-row">
+            <input [(ngModel)]="newRole" placeholder="Role name">
+            <button class="primary" (click)="createRole()">Add</button>
+        </div>
+
+        <table>
+
+            <tr>
+                <th>Name</th>
+                <th>Action</th>
+            </tr>
+
+            <tr *ngFor="let role of roles">
+                <td>{{role.name}}</td>
+                <td>
+                    <button class="danger" (click)="deleteRole(role.id)">
+                        Delete
+                    </button>
+                </td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</div>
