@@ -16,6 +16,8 @@ export class EmployeeListComponent implements OnInit {
   departments: any[] = [];
   roles: any[] = [];
   page = 1;
+  totalPages = 1;
+  pageSize = 10;
   search = '';
 
   newEmployee: any = {
@@ -29,7 +31,19 @@ export class EmployeeListComponent implements OnInit {
     joiningDate: new Date().toISOString().split('T')[0],
     isActive: true,
   };
+  editingEmployeeId: string | null = null;
 
+  editEmployee: any = {
+    firstName: '',
+    lastName: '',
+    email: '',
+    salary: 0,
+    departmentId: '',
+    roleId: '',
+    dateOfBirth: '',
+    joiningDate: '',
+    isActive: true,
+  };
   constructor(
     private employeeService: EmployeeService,
     private departmentService: DepartmentService,
@@ -42,9 +56,14 @@ export class EmployeeListComponent implements OnInit {
 
   loadEmployees() {
     this.employeeService
-      .getEmployees(this.page, 10, this.search)
+      .getEmployees(this.page, this.pageSize, this.search)
       .subscribe((res) => {
-        this.employees = res.data.items;
+        const result = res.data;
+        console.log('Employee List:', result);
+
+        this.employees = result.items;
+        this.totalPages = result.totalPages;
+        this.page = result.pageNumber;
       });
   }
 
@@ -72,5 +91,50 @@ export class EmployeeListComponent implements OnInit {
     this.employeeService
       .deleteEmployee(id)
       .subscribe(() => this.loadEmployees());
+  }
+
+  nextPage() {
+    if (this.page < this.totalPages) {
+      this.page++;
+      this.loadEmployees();
+    }
+  }
+
+  prevPage() {
+    if (this.page > 1) {
+      this.page--;
+      this.loadEmployees();
+    }
+  }
+
+  startEdit(emp: any) {
+    this.editingEmployeeId = emp.id;
+
+    this.editEmployee = {
+      firstName: emp.firstName,
+      lastName: emp.lastName,
+      email: emp.email,
+      salary: emp.salary,
+      departmentId: emp.departmentId,
+      roleId: emp.roleId,
+      dateOfBirth: emp.dateOfBirth?.split('T')[0],
+      joiningDate: emp.joiningDate?.split('T')[0],
+      isActive: emp.isActive,
+    };
+  }
+  cancelEdit() {
+    this.editingEmployeeId = null;
+  }
+
+  updateEmployee() {
+    if (!this.editingEmployeeId) return;
+
+    this.employeeService
+      .updateEmployee(this.editingEmployeeId, this.editEmployee)
+      .subscribe(() => {
+        this.editingEmployeeId = null;
+
+        this.loadEmployees();
+      });
   }
 }

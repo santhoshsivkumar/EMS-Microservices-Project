@@ -112,3 +112,14 @@ tr:hover {
   gap: 10px;
   margin-bottom: 20px;
 }
+.pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  align-items: center;
+}
+
+.pagination button {
+  padding: 6px 12px;
+}

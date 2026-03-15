@@ -4,8 +4,7 @@
 
         <h2>Employees</h2>
 
-        <input placeholder="Search employee..." [(ngModel)]="search" (keyup)="loadEmployees()" />
-
+        <input placeholder="Search employee..." [(ngModel)]="search" (keyup)="page = 1; loadEmployees()" />
         <h3 style="margin-top:30px">Add Employee</h3>
 
         <div class="form-grid">
@@ -54,25 +53,104 @@
                 <th>Email</th>
                 <th>Department</th>
                 <th>Salary</th>
+                <th>Date of Birth</th>
+                <th>Joining Date</th>
                 <th>Action</th>
             </tr>
 
             <tr *ngFor="let emp of employees">
 
-                <td>{{emp.firstName}} {{emp.lastName}}</td>
-                <td>{{emp.email}}</td>
-                <td>{{emp.departmentName}}</td>
-                <td>{{emp.salary}}</td>
+                <td *ngIf="editingEmployeeId !== emp.id">
+                    {{emp.firstName}} {{emp.lastName}}
+                </td>
+
+                <td *ngIf="editingEmployeeId === emp.id">
+                    <input [(ngModel)]="editEmployee.firstName" placeholder="First">
+                    <input [(ngModel)]="editEmployee.lastName" placeholder="Last">
+                </td>
+
+                <td *ngIf="editingEmployeeId !== emp.id">
+                    {{emp.email}}
+                </td>
+
+                <td *ngIf="editingEmployeeId === emp.id">
+                    <input [(ngModel)]="editEmployee.email">
+                </td>
+
+                <td *ngIf="editingEmployeeId !== emp.id">
+                    {{emp.departmentName}}
+                </td>
+
+                <td *ngIf="editingEmployeeId === emp.id">
+                    <select [(ngModel)]="editEmployee.departmentId">
+                        <option *ngFor="let d of departments" [value]="d.id">
+                            {{d.name}}
+                        </option>
+                    </select>
+                </td>
+
+                <td *ngIf="editingEmployeeId !== emp.id">
+                    {{emp.salary}}
+                </td>
+
+                <td *ngIf="editingEmployeeId === emp.id">
+                    <input type="number" [(ngModel)]="editEmployee.salary">
+                </td>
+
+                <td *ngIf="editingEmployeeId !== emp.id">
+                    {{emp.dateOfBirth | date:'mediumDate'}}
+                </td>
+
+                <td *ngIf="editingEmployeeId === emp.id">
+                    <input type="date" [(ngModel)]="editEmployee.dateOfBirth">
+                </td>
+
+                <td *ngIf="editingEmployeeId !== emp.id">
+                    {{emp.joiningDate | date:'mediumDate'}}
+                </td>
+
+                <td *ngIf="editingEmployeeId === emp.id">
+                    <input type="date" [(ngModel)]="editEmployee.joiningDate">
+                </td>
 
                 <td>
-                    <button class="danger" (click)="deleteEmployee(emp.id)">
+
+                    <button *ngIf="editingEmployeeId !== emp.id" (click)="startEdit(emp)">
+                        Edit
+                    </button>
+
+                    <button *ngIf="editingEmployeeId === emp.id" (click)="updateEmployee()" class="primary">
+                        Save
+                    </button>
+
+                    <button *ngIf="editingEmployeeId === emp.id" (click)="cancelEdit()">
+                        Cancel
+                    </button>
+
+                    <button *ngIf="editingEmployeeId !== emp.id" (click)="deleteEmployee(emp.id)" class="danger">
                         Delete
                     </button>
+
                 </td>
 
             </tr>
 
         </table>
+        <div class="pagination">
+
+            <button (click)="prevPage()" [disabled]="page === 1">
+                Previous
+            </button>
+
+            <span>
+                Page {{page}} of {{totalPages}}
+            </span>
+
+            <button (click)="nextPage()" [disabled]="page === totalPages">
+                Next
+            </button>
+
+        </div>
 
     </div>
 
