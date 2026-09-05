@@ -1,0 +1,17 @@
+D:\EMS\EMS\EMS.Persistence\bin\Debug\net8.0\EMS.Persistence.deps.json
+D:\EMS\EMS\EMS.Persistence\bin\Debug\net8.0\EMS.Persistence.runtimeconfig.json
+D:\EMS\EMS\EMS.Persistence\bin\Debug\net8.0\EMS.Persistence.dll
+D:\EMS\EMS\EMS.Persistence\bin\Debug\net8.0\EMS.Persistence.pdb
+D:\EMS\EMS\EMS.Persistence\bin\Debug\net8.0\EMS.Domain.dll
+D:\EMS\EMS\EMS.Persistence\bin\Debug\net8.0\EMS.Domain.pdb
+D:\EMS\EMS\EMS.Persistence\obj\Debug\net8.0\EMS.Persistence.csproj.AssemblyReference.cache
+D:\EMS\EMS\EMS.Persistence\obj\Debug\net8.0\EMS.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+D:\EMS\EMS\EMS.Persistence\obj\Debug\net8.0\EMS.Persistence.AssemblyInfoInputs.cache
+D:\EMS\EMS\EMS.Persistence\obj\Debug\net8.0\EMS.Persistence.AssemblyInfo.cs
+D:\EMS\EMS\EMS.Persistence\obj\Debug\net8.0\EMS.Persistence.csproj.CoreCompileInputs.cache
+D:\EMS\EMS\EMS.Persistence\obj\Debug\net8.0\EMS.Pers.393DF1BA.Up2Date
+D:\EMS\EMS\EMS.Persistence\obj\Debug\net8.0\EMS.Persistence.dll
+D:\EMS\EMS\EMS.Persistence\obj\Debug\net8.0\refint\EMS.Persistence.dll
+D:\EMS\EMS\EMS.Persistence\obj\Debug\net8.0\EMS.Persistence.pdb
+D:\EMS\EMS\EMS.Persistence\obj\Debug\net8.0\EMS.Persistence.genruntimeconfig.cache
+D:\EMS\EMS\EMS.Persistence\obj\Debug\net8.0\ref\EMS.Persistence.dll

@@ -1,0 +1,15 @@
+D:\EMS\EMS\EMS.Infrastructure\bin\Debug\net8.0\EMS.Infrastructure.deps.json
+D:\EMS\EMS\EMS.Infrastructure\bin\Debug\net8.0\EMS.Infrastructure.dll
+D:\EMS\EMS\EMS.Infrastructure\bin\Debug\net8.0\EMS.Infrastructure.pdb
+D:\EMS\EMS\EMS.Infrastructure\bin\Debug\net8.0\EMS.Domain.dll
+D:\EMS\EMS\EMS.Infrastructure\bin\Debug\net8.0\EMS.Domain.pdb
+D:\EMS\EMS\EMS.Infrastructure\obj\Debug\net8.0\EMS.Infrastructure.csproj.AssemblyReference.cache
+D:\EMS\EMS\EMS.Infrastructure\obj\Debug\net8.0\EMS.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\EMS\EMS\EMS.Infrastructure\obj\Debug\net8.0\EMS.Infrastructure.AssemblyInfoInputs.cache
+D:\EMS\EMS\EMS.Infrastructure\obj\Debug\net8.0\EMS.Infrastructure.AssemblyInfo.cs
+D:\EMS\EMS\EMS.Infrastructure\obj\Debug\net8.0\EMS.Infrastructure.csproj.CoreCompileInputs.cache
+D:\EMS\EMS\EMS.Infrastructure\obj\Debug\net8.0\EMS.Infr.CB012292.Up2Date
+D:\EMS\EMS\EMS.Infrastructure\obj\Debug\net8.0\EMS.Infrastructure.dll
+D:\EMS\EMS\EMS.Infrastructure\obj\Debug\net8.0\refint\EMS.Infrastructure.dll
+D:\EMS\EMS\EMS.Infrastructure\obj\Debug\net8.0\EMS.Infrastructure.pdb
+D:\EMS\EMS\EMS.Infrastructure\obj\Debug\net8.0\ref\EMS.Infrastructure.dll
